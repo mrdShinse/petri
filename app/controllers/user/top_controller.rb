@@ -1,4 +1,4 @@
-class User::TopController < ApplicationController
+class User::TopController < User::Base
   def index
     render 'index'
   end

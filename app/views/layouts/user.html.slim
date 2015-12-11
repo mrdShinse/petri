@@ -1,0 +1,13 @@
+DOCTYPE
+html
+  head
+    title Petri
+    = stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'user', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    #wrapper
+      == render 'user/shared/header'
+      #container
+        == yield
+      == render 'shared/footer'
