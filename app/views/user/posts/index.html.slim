@@ -1,0 +1,11 @@
+- @title = '質問一覧'
+h1 = @title
+.table-wrapper
+  table.listing
+    tr
+      th タイトル
+      th 内容
+    - @posts.each do |p|    
+      tr
+        td = p.title
+        td = p.content 
