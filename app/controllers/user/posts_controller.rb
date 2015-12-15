@@ -7,6 +7,12 @@ class User::PostsController < User::Base
     @post = Post.new
   end
 
+  def show
+    @post = Post.find(params[:id])
+    puts "-------show---------#{@post.answers.empty?}"
+    @answer = Answer.new
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save

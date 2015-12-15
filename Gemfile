@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'slim-rails', '~> 3.0.1'
+gem 'foreigner', '~> 1.7.4'
+gem 'rails_best_practices', '~> 1.15.7', require: false
 group :test do
   gem 'rspec-rails', '~> 3.3.3'
 end

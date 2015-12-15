@@ -1,0 +1,21 @@
+- @title = @post.title
+h1 = @title
+
+#table-wrapper
+  table#attributes
+    tr
+      th 内容
+      td = @post.content
+    - @post.answers.each do |answer|
+      tr 
+        th 回答
+        td = answer.content
+    - if @post.answers.empty?
+      tr
+        th
+        td 回答がありません。
+  #generic-form
+    = form_for(@answer, url: user_post_answer_index_path(post_id: @post.id)) do |f|
+      == render 'answer', f: f
+      .buttons
+        = f.submit '登録'

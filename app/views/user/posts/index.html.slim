@@ -5,7 +5,7 @@ h1 = @title
     tr
       th タイトル
       th 内容
-    - @posts.each do |p|    
+    - @posts.each do |p|
       tr
-        td = p.title
-        td = p.content 
+        td = link_to p.title, user_post_path(id: p.id)
+        td = p.content

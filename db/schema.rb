@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211175606) do
+ActiveRecord::Schema.define(version: 20151213153931) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "post_id",    null: false
+    t.string   "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["post_id"], name: "answers_post_id_fk", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -19,5 +28,8 @@ ActiveRecord::Schema.define(version: 20151211175606) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  Foreigner.load
+  add_foreign_key "answers", "posts", name: "answers_post_id_fk"
 
 end
