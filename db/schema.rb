@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213153931) do
+ActiveRecord::Schema.define(version: 20151217173803) do
 
   create_table "answers", force: true do |t|
     t.integer  "post_id",    null: false
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20151213153931) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                            null: false
+    t.string   "email_for_index",                  null: false
+    t.string   "family_name",                      null: false
+    t.string   "given_name",                       null: false
+    t.string   "family_name_kana",                 null: false
+    t.string   "given_name_kana",                  null: false
+    t.string   "hashed_password"
+    t.date     "start_date",                       null: false
+    t.date     "end_date"
+    t.boolean  "suspended",        default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

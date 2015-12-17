@@ -9,7 +9,6 @@ class User::PostsController < User::Base
 
   def show
     @post = Post.find(params[:id])
-    puts "-------show---------#{@post.answers.empty?}"
     @answer = Answer.new
   end
 
