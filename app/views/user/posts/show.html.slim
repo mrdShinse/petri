@@ -6,14 +6,20 @@ h1 = @title
     tr
       th 内容
       td = @post.content
-    - @post.answers.each do |answer|
-      tr 
-        th 回答
-        td = answer.content
-    - if @post.answers.empty?
-      tr
-        th
-        td 回答がありません。
+      th 投稿者
+      td
+        = @post.user.family_name
+        = @post.user.given_name
+    tr 
+      th 回答
+      - @post.answers.each do |answer|
+          td = answer.content
+          th 投稿者
+          td
+            = answer.user.family_name
+            = answer.user.given_name
+      - if @post.answers.empty?
+          td 回答がありません。
   #generic-form
     = form_for(@answer, url: user_post_answer_index_path(post_id: @post.id)) do |f|
       == render 'answer', f: f

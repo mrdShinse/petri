@@ -11,23 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217173803) do
+ActiveRecord::Schema.define(version: 20151213153931) do
 
   create_table "answers", force: true do |t|
     t.integer  "post_id",    null: false
     t.string   "content",    null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "answers", ["post_id"], name: "answers_post_id_fk", using: :btree
+  add_index "answers", ["user_id"], name: "answers_user_id_fk", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "content",    null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "posts", ["user_id"], name: "posts_user_id_fk", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                            null: false
@@ -46,5 +51,8 @@ ActiveRecord::Schema.define(version: 20151217173803) do
 
   Foreigner.load
   add_foreign_key "answers", "posts", name: "answers_post_id_fk"
+  add_foreign_key "answers", "users", name: "answers_user_id_fk"
+
+  add_foreign_key "posts", "users", name: "posts_user_id_fk"
 
 end

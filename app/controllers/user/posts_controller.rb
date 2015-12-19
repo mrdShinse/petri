@@ -14,6 +14,7 @@ class User::PostsController < User::Base
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = session[:user_id]
     if @post.save
       flash.notice = '質問を投稿しました。'
       redirect_to :user_posts
