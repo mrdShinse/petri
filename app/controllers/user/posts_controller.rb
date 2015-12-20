@@ -19,6 +19,7 @@ class User::PostsController < User::Base
       flash.notice = '質問を投稿しました。'
       redirect_to :user_posts
     else
+      flash.now.alert = '入力に誤りがあります。'
       render action: 'new'
     end
   end

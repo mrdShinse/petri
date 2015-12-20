@@ -5,8 +5,12 @@ class User::AnswerController < User::Base
     @answer.user_id = session[:user_id]
     if @answer.save
       flash.notice = '回答を投稿しました。'
+    else
+      flash.now.alert = '入力に誤りがあります。'
     end
-    redirect_to user_post_url(@answer.post_id)
+    @post = Post.find(params[:post_id])
+    @answer = Answer.new
+    render 'user/posts/show'
   end
 
   private

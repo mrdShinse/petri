@@ -22,6 +22,6 @@ h1 = @title
           td 回答がありません。
   #generic-form
     = form_for(@answer, url: user_post_answer_index_path(post_id: @post.id)) do |f|
-      == render 'answer', f: f
+      == render 'user/posts/answer', f: f
       .buttons
         = f.submit '登録'
