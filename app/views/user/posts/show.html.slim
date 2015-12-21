@@ -1,26 +1,27 @@
-- @title = @post.title
-h1 = @title
-
-#table-wrapper
-  table#attributes
-    tr
-      th 内容
-      td = @post.content
-      th 投稿者
-      td
+.post-show-wrapper.pure-u-3-4
+  .post
+    .title = @post.title
+    .info
+      span.user
+        span.label 質問者：
         = @post.user.family_name
         = @post.user.given_name
-    tr 
-      th 回答
-      - @post.answers.each do |answer|
-          td = answer.content
-          th 投稿者
-          td
-            = answer.user.family_name
-            = answer.user.given_name
-      - if @post.answers.empty?
-          td 回答がありません。
-  #generic-form
+    .content
+      = simple_format(h @post.content)
+
+  .answers
+    - @post.answers.each do |answer|      
+      .info
+        span.user
+          span.label 回答者：
+          = answer.user.family_name
+          = answer.user.given_name
+      .content
+        = simple_format(h answer.content)
+    - if @post.answers.empty?
+      span 回答がありません。
+  
+  .answer-form
     = form_for(@answer, url: user_post_answer_index_path(post_id: @post.id)) do |f|
       == render 'user/posts/answer', f: f
       .buttons

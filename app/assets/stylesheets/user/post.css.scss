@@ -1,0 +1,33 @@
+@import 'colors';
+@import 'dimensions';
+
+.post-show-wrapper {
+  margin: 10;
+
+  .post {
+    background-color: $gray;
+
+    .title {
+      font-size: $huge;
+      font-weight: bold;
+    }
+
+    .info {
+      font-size: $normal;
+    }
+  }
+
+  .answers {
+    margin: 5 auto;
+    background-color: $gray;
+
+    .info {
+      font-size: $normal;
+    }
+  }
+
+  .answer-form {
+    margin: 5 auto;
+    background-color: $gray;
+  }
+}

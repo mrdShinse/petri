@@ -4,6 +4,6 @@ class Answer < ActiveRecord::Base
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
   validates :content, presence: true
-  validates_length_of :content, :maximum => 1000
+  validates_length_of :content, :maximum => 10000
 
 end

@@ -1,15 +1,19 @@
 - @title = '質問一覧'
 h1 = @title
-.table-wrapper
-  table.listing
-    tr
-      th タイトル
-      th 内容
-      th 投稿者
-    - @posts.each do |p|
+div
+  table.pure-table.pure-table-horizontal
+    head
       tr
-        td = link_to p.title, user_post_path(id: p.id)
-        td = p.content
-        td
-          = p.user.family_name
-          = p.user.given_name
+        th #
+        th 回答数
+        th タイトル
+        th 投稿者
+    tbody
+      - @posts.each do |p|
+        tr
+          td = link_to p.id, user_post_path(id: p.id)
+          td = p.answers.length
+          td = link_to p.title, user_post_path(id: p.id)
+          td
+            = p.user.family_name
+            = p.user.given_name

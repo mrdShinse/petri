@@ -60,6 +60,8 @@ GEM
     minitest (5.8.3)
     multi_json (1.11.2)
     mysql2 (0.3.20)
+    purecss-rails (0.6.0)
+      railties (>= 3.2.6, < 5)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -73,6 +75,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.14)
       sprockets-rails (~> 2.0)
+    rails-i18n (4.0.7)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     rails_best_practices (1.15.7)
       activesupport
       code_analyzer (>= 0.4.3)
@@ -160,7 +165,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.13)
+  purecss-rails (~> 0.6.0)
   rails (= 4.1.14)
+  rails-i18n (~> 4.0.7)
   rails_best_practices (~> 1.15.7)
   rspec-rails (~> 3.3.3)
   sass-rails (~> 4.0.3)

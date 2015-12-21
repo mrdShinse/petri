@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20151213153931) do
 
   create_table "answers", force: true do |t|
     t.integer  "post_id",    null: false
-    t.string   "content",    null: false
+    t.text     "content",    null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20151213153931) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.string   "content",    null: false
+    t.text     "content",    null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
