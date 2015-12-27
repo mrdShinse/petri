@@ -17,6 +17,7 @@ gem 'rails_best_practices', '~> 1.15.7', require: false
 gem 'bcrypt', '~> 3.1.10'
 gem 'rails-i18n', '~> 4.0.7'
 gem 'purecss-rails', '~> 0.6.0'
+gem 'redcarpet', '~> 3.3.4'
 group :test do
   gem 'rspec-rails', '~> 3.3.3'
 end

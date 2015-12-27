@@ -7,7 +7,7 @@
         = @post.user.family_name
         = @post.user.given_name
     .content
-      = simple_format(h @post.content)
+      = markdown @post.content
 
   .answers
     - @post.answers.each do |answer|      
@@ -17,7 +17,7 @@
           = answer.user.family_name
           = answer.user.given_name
       .content
-        = simple_format(h answer.content)
+        = markdown answer.content
     - if @post.answers.empty?
       span 回答がありません。
   
