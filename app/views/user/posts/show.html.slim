@@ -3,9 +3,11 @@
     .title = @post.title
     .info
       span.user
-        span.label 質問者：
         = @post.user.family_name
         = @post.user.given_name
+        span.label が
+        = @post.created_at
+        spam.label に質問
     .content
       = markdown @post.content
 
@@ -13,9 +15,11 @@
     - @post.answers.each do |answer|      
       .info
         span.user
-          span.label 回答者：
           = answer.user.family_name
           = answer.user.given_name
+          span.label が
+          = @post.created_at
+          spam.label に回答
       .content
         = markdown answer.content
     - if @post.answers.empty?

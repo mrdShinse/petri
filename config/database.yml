@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: petri_production
-  username: petri
-  password: <%= ENV['PETRI_DATABASE_PASSWORD'] %>
+  username: root
+  password: 'password'
