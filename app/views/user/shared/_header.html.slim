@@ -4,6 +4,9 @@ header
   = content_tag(:span, flash.alert, class: 'alert') if flash.alert
   - if current_user
     = link_to 'ログアウト', :user_session, method: :delete
+    span.login-status さん
+    span.login-status = current_user.given_name
+    span.login-status ようこそ、
   - else
     = link_to 'ログイン', :new_user_session
 #top-menu

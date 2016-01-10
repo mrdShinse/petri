@@ -1,5 +1,5 @@
 .post-show-wrapper.pure-u-3-4
-  .post
+  .post.gray-border
     .title = @post.title
     .info
       span.user
@@ -11,7 +11,7 @@
     .content
       = markdown @post.content
 
-  .answers
+  .answers.gray-border
     - @post.answers.each do |answer|      
       .info
         span.user
@@ -25,7 +25,7 @@
     - if @post.answers.empty?
       span 回答がありません。
   
-  .answer-form
+  .generic-form.gray-border
     = form_for(@answer, url: user_post_answer_index_path(post_id: @post.id)) do |f|
       == render 'user/posts/answer', f: f
       .buttons

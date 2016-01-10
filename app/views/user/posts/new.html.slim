@@ -1,9 +1,10 @@
 - @title = '質問作成'
 h1 = @title
 
-.generic-form
-  = form_for [ :user, @post ] do |f|
-    == render 'form', f: f
-    .buttons
-      = f.submit '登録'
-      = link_to 'キャンセル', :user_posts
+.pure-u-3-4
+  .generic-form.gray-border
+    = form_for [ :user, @post ] do |f|
+      == render 'form', f: f
+      .buttons
+        = f.submit '登録'
+        = link_to 'キャンセル', :user_posts

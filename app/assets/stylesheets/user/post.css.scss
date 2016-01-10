@@ -5,29 +5,27 @@
   margin: 10;
 
   .post {
-    background-color: $gray;
-
     .title {
       font-size: $huge;
       font-weight: bold;
-    }
-
-    .info {
-      font-size: $normal;
     }
   }
 
   .answers {
     margin: 5 auto;
-    background-color: $gray;
-
-    .info {
-      font-size: $normal;
-    }
   }
+}
 
-  .answer-form {
-    margin: 5 auto;
-    background-color: $gray;
-  }
+.gray-border {
+  border: 1px solid $gray;
+  border-radius: $small_radious;
+  background-color: $light_gray;
+}
+
+.generic-form {
+  margin: 5 auto;
+}
+
+.info {
+  font-size: $normal;
 }

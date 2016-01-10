@@ -27,6 +27,10 @@ header {
     color: $very_light_gray;
     margin-left: $wide;
   }
+  span.login-status {
+    float: right;
+    font-size: $normal;
+  }
 }
 footer {
   bottom: 0;
